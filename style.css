@@ -1,0 +1,266 @@
+/* ── CSS Variables ─────────────────────────────────── */
+:root {
+  --teal:       #2c6e6a;
+  --teal-light: #3d8c87;
+  --teal-pale:  #e8f4f3;
+  --ink:        #1a1a1a;
+  --body:       #3d3d3d;
+  --muted:      #7a7a7a;
+  --rule:       #dde8e7;
+  --bg:         #fafafa;
+  --white:      #ffffff;
+  --font-head:  'Playfair Display', Georgia, serif;
+  --font-body:  'DM Sans', sans-serif;
+}
+
+/* ── Reset & Base ──────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--body);
+  background: var(--bg);
+}
+
+a {
+  color: var(--teal);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+ul {
+  padding-left: 1.2rem;
+  margin-top: 0.4rem;
+}
+li { margin-bottom: 0.3rem; }
+
+/* ── Header ────────────────────────────────────────── */
+header {
+  background: var(--white);
+  border-bottom: 3px solid var(--teal);
+  position: relative;
+  overflow: hidden;
+}
+
+.header-accent {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, var(--teal) 0%, var(--teal-light) 60%, #a8d5d2 100%);
+}
+
+.header-content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.8rem 2rem 2rem;
+  text-align: center;
+  animation: fadeDown 0.7s ease both;
+}
+
+h1 {
+  font-family: var(--font-head);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+}
+
+.contact {
+  font-size: 0.88rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  line-height: 1.8;
+}
+
+/* ── Main Layout ───────────────────────────────────── */
+main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 2rem 3rem;
+}
+
+/* ── Sections ──────────────────────────────────────── */
+.section {
+  margin-bottom: 2.6rem;
+  animation: fadeUp 0.6s ease both;
+}
+
+.section-title {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+  padding-bottom: 0.45rem;
+  border-bottom: 1.5px solid var(--rule);
+  margin-bottom: 1.2rem;
+}
+
+/* ── Summary ───────────────────────────────────────── */
+.summary-text {
+  background: var(--teal-pale);
+  border-left: 4px solid var(--teal);
+  padding: 1rem 1.2rem;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.94rem;
+  color: var(--ink);
+  line-height: 1.8;
+}
+
+/* ── Jobs ──────────────────────────────────────────── */
+.job, .edu-item {
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px dashed var(--rule);
+}
+.job:last-child, .edu-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.job-title {
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.job-company {
+  font-size: 0.86rem;
+  color: var(--teal);
+  font-weight: 400;
+  margin-top: 0.1rem;
+}
+
+.job-date {
+  font-size: 0.82rem;
+  color: var(--muted);
+  white-space: nowrap;
+  padding-top: 0.1rem;
+  font-style: italic;
+}
+
+.achievements-label {
+  margin-top: 0.8rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── Two-column ────────────────────────────────────── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* ── Languages ─────────────────────────────────────── */
+.tag-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tag-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.tag {
+  background: var(--teal);
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.tag-desc {
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+/* ── Hobbies ───────────────────────────────────────── */
+.hobbies-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.hobby {
+  background: var(--teal-pale);
+  border: 1px solid var(--rule);
+  padding: 0.35rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--ink);
+  transition: background 0.2s, transform 0.2s;
+  cursor: default;
+}
+
+.hobby:hover {
+  background: var(--teal);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* ── Footer ────────────────────────────────────────── */
+footer {
+  text-align: center;
+  padding: 1.4rem 1rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.78rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+/* ── Animations ────────────────────────────────────── */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.section:nth-child(1) { animation-delay: 0.1s; }
+.section:nth-child(2) { animation-delay: 0.2s; }
+.section:nth-child(3) { animation-delay: 0.3s; }
+.two-col              { animation: fadeUp 0.6s 0.4s ease both; }
+
+/* ── Responsive ────────────────────────────────────── */
+@media (max-width: 600px) {
+  main { padding: 1.4rem 1rem 2rem; }
+  .job-header { flex-direction: column; gap: 0.2rem; }
+  .two-col { grid-template-columns: 1fr; }
+  h1 { letter-spacing: 0.04em; }
+}
